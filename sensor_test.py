@@ -43,7 +43,7 @@ while True:
 print "Readings complete."
 matrixData = []
 for i in range(len(arrayTimestamp)):
-    matrixData.append([arrayTimestamp[i]arrayLoudness[i], arrayMQ5[i]]) #, arrayTemperature[i], arrayHumidity[i], )
+    matrixData.append([arrayTimestamp[i], arrayLoudness[i], arrayMQ5[i]]) #, arrayTemperature[i], arrayHumidity[i], )
 
 print " "
 print "======="
