@@ -14,7 +14,7 @@ arrayLoudness = []
 arrayMQ5 = []
 
 def readingsSensors():
-    th = grove_i2c_temp_hum_mini.th02()
+    #th = grove_i2c_temp_hum_mini.th02()
     theTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
     #theTemperature = th.getTemperature()
     #theHumidity = th.getHumidity()
