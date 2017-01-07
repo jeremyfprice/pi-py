@@ -1,4 +1,4 @@
-import random, time, grovepi, grove_i2c_temp_hum_mini
+import random, time, grovepi
 from statistics import mean
 from terminaltables import AsciiTable
 
@@ -16,13 +16,13 @@ arrayMQ5 = []
 def readingsSensors():
     th = grove_i2c_temp_hum_mini.th02()
     theTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-    theTemperature = th.getTemperature()
-    theHumidity = th.getHumidity()
+    #theTemperature = th.getTemperature()
+    #theHumidity = th.getHumidity()
     theLoudness = grovepi.analogRead(sensorLoudness)
     theMQ5 = grovepi.analogRead(sensorMQ5)
     arrayTimestamp.append(theTime)
-    arrayTemperature.append(theTemperature)
-    arrayHumidity.append(theHumidity)
+    #arrayTemperature.append(theTemperature)
+    #arrayHumidity.append(theHumidity)
     arrayLoudness.append(theLoudness)
     arrayMQ5.append(theMQ5)
     timeRemaining = str(int(timeout - time.time() + .5))
@@ -43,7 +43,7 @@ while True:
 print "Readings complete."
 matrixData = []
 for i in range(len(arrayTimestamp)):
-    matrixData.append([arrayTimestamp[i], arrayTemperature[i], arrayHumidity[i], arrayLoudness[i], arrayMQ5[i]])
+    matrixData.append([arrayTimestamp[i]arrayLoudness[i], arrayMQ5[i]]) #, arrayTemperature[i], arrayHumidity[i], )
 
 print " "
 print "======="
@@ -61,6 +61,6 @@ print " "
 #print "STATISTICS TABLE:"
 #print " "
 
-tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", min(arrayMQ5), round(mean(arrayMQ5),3), max(arrayMQ5)]]
-table = AsciiTable(tableStats)
+tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", min(arrayMQ5), round(mean(arrayMQ5),3), max(arrayMQ5)]]
+table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
