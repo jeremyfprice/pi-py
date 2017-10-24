@@ -2,7 +2,7 @@
 # -*- coding: latin-1 -*-
 
 import sys
-#sys.path.append("GrovePi/Software/Python/")
+sys.path.append('home/GrovePi/Software/Python/')
 import os
 import time
 import math
@@ -15,26 +15,26 @@ import random
 MQ9_gas_sensor = 0
 
 # Initializing variables
-grovepi.pinMode(MQ9_gas_sensor,&quot;INPUT&quot;)
+grovepi.pinMode(MQ9_gas_sensor,"INPUT")
 
 count = 0
 while True:
     try:
         #Get a average data by testing 100 times
-        while(count &lt; 100):
+        while(count < 100):
             sensor_value = grovepi.analogRead(MQ9_gas_sensor)
             count = count +1
-            print (&quot;Calibrating...&quot;), count,(&quot;%&quot;), (&quot;  Sensor Value =&quot;), sensor_value
+            print ("Calibrating..."), count,("%"), ("  Sensor Value ="), sensor_value
         
         sensor_value=(float)(sensor_value/100.0)
         sensor_volt=(float)(sensor_value/1024.0)*5.0
         RS_air=(float)(5.0-sensor_volt)/sensor_volt #omit *RL
         R0 = (float)(RS_air/9.9)
-        print(&quot;sensor volt =&quot;), sensor_volt,(&quot;V&quot;)
-        print(&quot;R0 =&quot;), R0
+        print("sensor volt ="), sensor_volt,("V")
+        print("R0 ="), R0
         time.sleep(1)
     except (IOError,TypeError) as e:
-        print &quot;Error&quot; + str(e)
+        print "Error" + str(e)
     except KeyboardInterrupt:
         break
 exit()
