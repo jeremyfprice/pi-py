@@ -52,9 +52,11 @@ print "======="
 print " "
 
 meanMQ5 = mean(arrayMQ5)
+minMQ5 = min(arrayMQ5)
+maxMQ5 = max(arrayMQ5)
 densityMQ5 = round(meanMQ5/1024, 6)
-minMQ5 = round(min(arrayMQ5), 6)
-maxMQ5 = round(max(arrayMQ5), 6)
+mindMQ5 = round(minMQ5/1024), 6)
+maxdMQ5 = round(maxMQ5/1024), 6)
 
 #print "RAW DATA TABLE:"
 #print " "
@@ -67,6 +69,6 @@ maxMQ5 = round(max(arrayMQ5), 6)
 #print " "
 #round(mean(arrayMQ5),3)
 
-tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", minMQ5, densityMQ5, maxMQ5]]
+tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", mindMQ5, densityMQ5, maxdMQ5]]
 table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
