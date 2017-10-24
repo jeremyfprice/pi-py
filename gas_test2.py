@@ -62,7 +62,7 @@ while True:
         # Calculate gas density - large value means more dense gas
         density = (float)(sensor_value / 1024)
 
-        print("sensor_value =", sensor_value, " density =", round(density, 6)
+        print("sensor_value =", sensor_value, " density =", round(density, 6))
         time.sleep(.5)
 
     except IOError:
