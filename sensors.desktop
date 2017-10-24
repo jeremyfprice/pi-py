@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Test
+Exec=/home/pi-py/sensor_test2.py
+Terminal=true
+Type=Application
