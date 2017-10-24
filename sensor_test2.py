@@ -28,7 +28,7 @@ def readingsSensors():
     timeRemaining = str(int(timeout - time.time() + .5))
     timeMessage = "Reading taken. " + timeRemaining + " seconds remaining."
     print timeMessage
-    time.sleep(5)
+    time.sleep(2)
 
 while True:
     if time.time() > timeout:
@@ -53,6 +53,8 @@ print " "
 
 meanMQ5 = mean(arrayMQ5)
 densityMQ5 = round(meanMQ5/1024, 6)
+minMQ5 = round(min(arrayMQ5), 6)
+maxMQ5 = round(max(arrayMQ5), 6)
 
 #print "RAW DATA TABLE:"
 #print " "
@@ -65,6 +67,6 @@ densityMQ5 = round(meanMQ5/1024, 6)
 #print " "
 #round(mean(arrayMQ5),3)
 
-tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", min(arrayMQ5), densityMQ5, max(arrayMQ5)]]
+tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", minMQ5, densityMQ5, maxMQ5]]
 table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
