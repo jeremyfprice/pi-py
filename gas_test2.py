@@ -60,9 +60,9 @@ while True:
         sensor_value = grovepi.analogRead(gas_sensor)
 
         # Calculate gas density - large value means more dense gas
-        density = (float)(sensor_value / 1024)
+        density = (sensor_value / 1024)
 
-        print("sensor_value =", sensor_value, " density =", round(density, 6))
+        print("sensor_value =", sensor_value, " density =", density)
         time.sleep(.5)
 
     except IOError:
