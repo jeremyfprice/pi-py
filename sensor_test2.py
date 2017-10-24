@@ -55,8 +55,8 @@ meanMQ5 = mean(arrayMQ5)
 minMQ5 = min(arrayMQ5)
 maxMQ5 = max(arrayMQ5)
 densityMQ5 = round(meanMQ5/1024, 6)
-mindMQ5 = round(minMQ5/1024), 6)
-maxdMQ5 = round(maxMQ5/1024), 6)
+mindMQ5 = round(minMQ5/1024, 6)
+maxdMQ5 = round(maxMQ5/1024, 6)
 
 #print "RAW DATA TABLE:"
 #print " "
