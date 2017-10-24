@@ -2,7 +2,7 @@ import random, time, grovepi
 from statistics import mean
 from terminaltables import AsciiTable
 
-timeout = time.time() + 60*1 # Set to run for 2 minutes
+timeout = time.time() + 60*2 # Set to run for 2 minutes
 
 sensorLoudness = 1
 sensorMQ5 = 2
@@ -28,7 +28,7 @@ def readingsSensors():
     timeRemaining = str(int(timeout - time.time() + .5))
     timeMessage = "Reading taken. " + timeRemaining + " seconds remaining."
     print timeMessage
-    time.sleep(2)
+    time.sleep(0.5)
 
 while True:
     if time.time() > timeout:
