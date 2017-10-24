@@ -2,7 +2,7 @@ import random, time, grovepi
 from statistics import mean
 from terminaltables import AsciiTable
 
-timeout = time.time() + 60*2 # Set to run for 2 minutes
+timeout = time.time() + 60*1 # Set to run for 2 minutes
 
 sensorLoudness = 1
 sensorMQ5 = 2
@@ -63,7 +63,8 @@ densityMQ5 = round(meanMQ5/1024, 6)
 #print " "
 #print "STATISTICS TABLE:"
 #print " "
+#round(mean(arrayMQ5),3)
 
-tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", min(arrayMQ5), round(mean(arrayMQ5),3), max(arrayMQ5)]]
+tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", min(arrayLoudness), round(mean(arrayLoudness),3), max(arrayLoudness)], ["MQ5", min(arrayMQ5), densityMQ5, max(arrayMQ5)]]
 table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
