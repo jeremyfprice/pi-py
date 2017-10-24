@@ -2,7 +2,7 @@
 # -*- coding: latin-1 -*-
 
 import sys
-sys.path.append(&#039;/home/pi/GrovePi/Software/Python/&#039;)
+sys.path.append(GrovePi/Software/Python/)
 import os
 import time
 import math
