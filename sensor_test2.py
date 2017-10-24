@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import random, time, grovepi
 from statistics import mean
 from terminaltables import AsciiTable
