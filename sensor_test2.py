@@ -55,15 +55,20 @@ print " "
 meanMQ5 = mean(arrayMQ5)
 #modeMQ5 = mode(arrayMQ5)
 medianMQ5 = median(arrayMQ5)
+medianLoudness = median(arrayLoudness)
+meanLoudness = mean(arrayLoudness)
 minMQ5 = min(arrayMQ5)
 maxMQ5 = max(arrayMQ5)
-densityMQ5 = round(meanMQ5/1024, 6)
-signalLoudness = round((mean(arrayLoudness))/1024, 6)
-minLoudness = min(arrayLoudness)/1024
-maxLoudness = max(arrayLoudness)/1024
+minLoudness = min(arrayLoudness)
+maxLoudness = max(arrayLoudness)
+densityMQ5 = meanMQ5/1024
+signalLoudness = meanLoudness/1024
+mindLoudness = minLoudness/1024
+maxdLoudness = maxLoudness/1024
 
-mindMQ5 = round(min(arrayMQ5)/1024, 6)
-maxdMQ5 = round(max(arrayMQ5)/1024, 6)
+mindMQ5 = minMQ5/1024
+maxdMQ5 = maxMQ5/1024
+meandMQ5 = meanMQ5/1024
 
 #print "RAW DATA TABLE:"
 #print " "
@@ -76,6 +81,6 @@ maxdMQ5 = round(max(arrayMQ5)/1024, 6)
 #print " "
 #round(mean(arrayMQ5),3) round(mean(arrayLoudness),3)
 
-tableStats = [["READING", "MIN", "MEAN", "MEDIAN", "MAX"], ["Loudness", minLoudness, signalLoudness, maxLoudness], ["MQ5", minMQ5, densityMQ5, medianMQ5, maxMQ5]]
+tableStats = [["READING", "MIN", "MEAN", "MEDIAN", "MAX"], ["Loudness", minLoudness, signalLoudness, maxLoudness], ["MQ5", round(mindMQ5, 3), round(densityMQ5, 3), round(mediandMQ5, 3), round(maxdMQ5, 3)]]
 table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
