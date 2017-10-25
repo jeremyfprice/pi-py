@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import random, time, grovepi
-import statistics
+from statistics import mean, mode, median, min, max
 from terminaltables import AsciiTable
 
 timeout = time.time() + 60*0.5 # Set to run for .5 minutes
@@ -26,7 +26,7 @@ def readingsSensors():
     #arrayHumidity.append(theHumidity)
     arrayLoudness.append(theLoudness)
     arrayMQ5.append(theMQ5)
-    timeRemaining = str(int(timeout - time.time() + .5))
+    timeRemaining = str(int(timeout - time.time() + .25))
     timeMessage = "Reading taken. " + timeRemaining + " seconds remaining."
     print timeMessage
     time.sleep(0.1)
@@ -53,6 +53,8 @@ print "======="
 print " "
 
 meanMQ5 = mean(arrayMQ5)
+modeMQ5 = mode(arrayMQ5)/1024
+medianMQ5 = median(arrayMQ5)/1024
 minMQ5 = min(arrayMQ5)
 maxMQ5 = max(arrayMQ5)
 densityMQ5 = round(meanMQ5/1024, 6)
@@ -74,6 +76,6 @@ maxdMQ5 = round(max(arrayMQ5)/1024, 6)
 #print " "
 #round(mean(arrayMQ5),3) round(mean(arrayLoudness),3)
 
-tableStats = [["READING", "MIN", "MEAN", "MAX"], ["Loudness", minLoudness, signalLoudness, maxLoudness], ["MQ5", minMQ5, densityMQ5, maxMQ5]]
+tableStats = [["READING", "MIN", "MEAN", "MEDIAN", "MODE", "MAX"], ["Loudness", minLoudness, signalLoudness, maxLoudness], ["MQ5", minMQ5, densityMQ5, medianMQ5, modeMQ5, maxMQ5]]
 table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
