@@ -53,8 +53,8 @@ print "======="
 print " "
 
 meanMQ5 = mean(arrayMQ5)
-modeMQ5 = mode(arrayMQ5)/1024
-medianMQ5 = median(arrayMQ5)/1024
+modeMQ5 = mode(arrayMQ5)
+medianMQ5 = median(arrayMQ5)
 minMQ5 = min(arrayMQ5)
 maxMQ5 = max(arrayMQ5)
 densityMQ5 = round(meanMQ5/1024, 6)
