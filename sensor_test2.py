@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import random, time, grovepi
-from statistics import mean, mode, median, min, max
+from statistics import mean, mode, median
 from terminaltables import AsciiTable
 
 timeout = time.time() + 60*0.5 # Set to run for .5 minutes
