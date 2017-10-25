@@ -82,6 +82,6 @@ mediandMQ5 = medianMQ5/1024
 #print " "
 #round(mean(arrayMQ5),3) round(mean(arrayLoudness),3)
 
-tableStats = [["READING", "MIN", "MEAN", "MEDIAN", "MAX"], ["Loudness", minLoudness, signalLoudness, maxLoudness], ["MQ5", round(minMQ5, 3), round(densityMQ5, 3), round(medianMQ5, 3), round(maxMQ5, 3)]]
+tableStats = [["READING", "MIN", "MEAN", "MEDIAN", "MAX"], ["Loudness", minLoudness, round(signalLoudness, 3), medianLoudness, maxLoudness], ["MQ5", round(minMQ5/1024, 3), round(densityMQ5, 3), round(medianMQ5/1024, 3), round(maxMQ5/1024, 3)]]
 table = AsciiTable(tableStats) #["Temperature", min(arrayTemperature), round(mean(arrayTemperature),3), max(arrayTemperature)], ["Humidity", min(arrayHumidity), round(mean(arrayHumidity),3), max(arrayHumidity)], 
 print table.table
