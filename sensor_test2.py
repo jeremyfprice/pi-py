@@ -69,6 +69,7 @@ maxdLoudness = maxLoudness/1024
 mindMQ5 = minMQ5/1024
 maxdMQ5 = maxMQ5/1024
 meandMQ5 = meanMQ5/1024
+mediandMQ5 = medianMQ5/1024
 
 #print "RAW DATA TABLE:"
 #print " "
